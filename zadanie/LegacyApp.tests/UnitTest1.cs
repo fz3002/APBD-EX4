@@ -20,17 +20,19 @@ public class UnitTest1
     {
         UserService us = new UserService();
         us.AddUser("Jan", "Kowalski", "kowalski@wp.pl", new DateTime(2048, 2,2), 1);
-        us.AddUser("Jan", "Kowalski", "kowalski@wppl", new DateTime(1982, 2,2), 1);
+        us.AddUser("Jan", "Kowalski", "kowalskiwppl", new DateTime(1982, 2,2), 1);
         us.AddUser(null, "Kowalski", "kowalski@wp.pl", new DateTime(1982, 2,2), 1);
         us.AddUser("Jan", null, "kowalski@wp.pl", new DateTime(1982, 2,2), 1);
         us.AddUser("Jan", "Kowalski", "kowalskiwp.pl", new DateTime(1982, 2,2), 1);
-        us.AddUser("Jan", "Kowalski", "kowalski@wp.pl", new DateTime(2010, 2,2), 1);
+        us.AddUser("Jan", "Kowalski", "kowalski@wp.pl", new DateTime(2010, 4,2), 1);
+        us.AddUser("Jan", "Kowalski", "kowalski@wp.pl", new DateTime(2010, 3,30), 1);
     }
-
-    public void exeptionTest()
+        
+    [Fact]
+    public void Test3()
     {
-
-        us.AddUser("Jan", "Kowalski", "kowalski@wp.pl", new DateTime(2048, 2,2), 1);
-        Assert.
+        UserService us = new UserService();
+        us.AddUser("Mariusz", "Malewski", "malewski@gmail.pl", new DateTime(1974, 2,2), 2);
+        us.AddUser("John", "Smith", "smith@gmail.pl", new DateTime(1974, 2,2), 3);
     }
 }

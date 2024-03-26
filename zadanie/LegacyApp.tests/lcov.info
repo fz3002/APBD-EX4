@@ -1,0 +1,220 @@
+SF:C:\Users\franc\Documents\APBD\APBD-EX4\zadanie\LegacyApp\Client.cs
+FN:4,System.String LegacyApp.Client::get_Name()
+FNDA:7,System.String LegacyApp.Client::get_Name()
+DA:5,7
+FN:5,System.Int32 LegacyApp.Client::get_ClientId()
+FNDA:7,System.Int32 LegacyApp.Client::get_ClientId()
+DA:6,7
+FN:6,System.String LegacyApp.Client::get_Email()
+FNDA:7,System.String LegacyApp.Client::get_Email()
+DA:7,7
+FN:7,System.String LegacyApp.Client::get_Address()
+FNDA:7,System.String LegacyApp.Client::get_Address()
+DA:8,7
+FN:8,System.String LegacyApp.Client::get_Type()
+FNDA:13,System.String LegacyApp.Client::get_Type()
+DA:9,13
+LF:5
+LH:5
+BRF:0
+BRH:0
+FNF:5
+FNH:5
+end_of_record
+SF:C:\Users\franc\Documents\APBD\APBD-EX4\zadanie\LegacyApp\ClientRepository.cs
+FN:30,LegacyApp.Client LegacyApp.ClientRepository::GetById(System.Int32)
+FNDA:4,LegacyApp.Client LegacyApp.ClientRepository::GetById(System.Int32)
+DA:31,4
+DA:32,4
+DA:33,4
+DA:35,4
+DA:36,4
+DA:38,0
+DA:39,4
+BRDA:35,37,0,4
+BRDA:35,37,1,0
+FN:21,System.Void LegacyApp.ClientRepository::.ctor()
+FNDA:5,System.Void LegacyApp.ClientRepository::.ctor()
+DA:22,5
+DA:23,5
+DA:24,5
+FN:11,System.Void LegacyApp.ClientRepository::.cctor()
+FNDA:1,System.Void LegacyApp.ClientRepository::.cctor()
+DA:12,1
+DA:13,1
+DA:14,1
+DA:15,1
+DA:16,1
+DA:17,1
+DA:18,1
+DA:19,1
+DA:20,1
+LF:19
+LH:18
+BRF:2
+BRH:1
+FNF:3
+FNH:3
+end_of_record
+SF:C:\Users\franc\Documents\APBD\APBD-EX4\zadanie\LegacyApp\User.cs
+FN:6,System.Object LegacyApp.User::get_Client()
+FNDA:4,System.Object LegacyApp.User::get_Client()
+DA:7,4
+FN:7,System.DateTime LegacyApp.User::get_DateOfBirth()
+FNDA:7,System.DateTime LegacyApp.User::get_DateOfBirth()
+DA:8,7
+FN:8,System.String LegacyApp.User::get_EmailAddress()
+FNDA:4,System.String LegacyApp.User::get_EmailAddress()
+DA:9,4
+FN:9,System.String LegacyApp.User::get_FirstName()
+FNDA:4,System.String LegacyApp.User::get_FirstName()
+DA:10,4
+FN:10,System.String LegacyApp.User::get_LastName()
+FNDA:7,System.String LegacyApp.User::get_LastName()
+DA:11,7
+FN:11,System.Boolean LegacyApp.User::get_HasCreditLimit()
+FNDA:7,System.Boolean LegacyApp.User::get_HasCreditLimit()
+DA:12,7
+FN:12,System.Int32 LegacyApp.User::get_CreditLimit()
+FNDA:5,System.Int32 LegacyApp.User::get_CreditLimit()
+DA:13,5
+LF:7
+LH:7
+BRF:0
+BRH:0
+FNF:7
+FNH:7
+end_of_record
+SF:C:\Users\franc\Documents\APBD\APBD-EX4\zadanie\LegacyApp\UserCreditService.cs
+FN:22,System.Void LegacyApp.UserCreditService::Dispose()
+FNDA:3,System.Void LegacyApp.UserCreditService::Dispose()
+DA:23,3
+DA:25,3
+FN:31,System.Int32 LegacyApp.UserCreditService::GetCreditLimit(System.String,System.DateTime)
+FNDA:3,System.Int32 LegacyApp.UserCreditService::GetCreditLimit(System.String,System.DateTime)
+DA:32,3
+DA:33,3
+DA:34,3
+DA:36,3
+DA:37,3
+DA:39,0
+DA:40,3
+BRDA:36,38,0,3
+BRDA:36,38,1,0
+FN:11,System.Void LegacyApp.UserCreditService::.ctor()
+FNDA:3,System.Void LegacyApp.UserCreditService::.ctor()
+DA:12,3
+DA:13,3
+DA:14,3
+DA:15,3
+DA:16,3
+DA:17,3
+DA:18,3
+DA:19,3
+DA:20,3
+LF:18
+LH:17
+BRF:2
+BRH:1
+FNF:3
+FNH:3
+end_of_record
+SF:C:\Users\franc\Documents\APBD\APBD-EX4\zadanie\LegacyApp\UserDataAccess.cs
+FN:15,System.Void LegacyApp.UserDataAccess::AddUser(LegacyApp.User)
+FNDA:2,System.Void LegacyApp.UserDataAccess::AddUser(LegacyApp.User)
+DA:16,2
+DA:17,2
+DA:18,2
+DA:19,2
+DA:20,2
+LF:5
+LH:5
+BRF:0
+BRH:0
+FNF:1
+FNH:1
+end_of_record
+SF:C:\Users\franc\Documents\APBD\APBD-EX4\zadanie\LegacyApp\UserService.cs
+FN:7,System.Boolean LegacyApp.UserService::AddUser(System.String,System.String,System.String,System.DateTime,System.Int32)
+FNDA:10,System.Boolean LegacyApp.UserService::AddUser(System.String,System.String,System.String,System.DateTime,System.Int32)
+DA:8,10
+DA:9,10
+DA:10,2
+DA:11,2
+DA:14,8
+DA:15,1
+DA:16,1
+DA:19,7
+DA:20,7
+DA:21,9
+DA:23,7
+DA:24,3
+DA:25,3
+DA:28,4
+DA:29,4
+DA:31,4
+DA:32,4
+DA:33,4
+DA:34,4
+DA:35,4
+DA:36,4
+DA:37,4
+DA:38,4
+DA:40,4
+DA:41,1
+DA:42,1
+DA:43,1
+DA:44,3
+DA:45,1
+DA:46,1
+DA:47,1
+DA:48,1
+DA:49,1
+DA:50,1
+DA:51,1
+DA:52,1
+DA:54,2
+DA:55,2
+DA:56,2
+DA:57,2
+DA:58,2
+DA:59,2
+DA:60,2
+DA:61,2
+DA:63,4
+DA:64,2
+DA:65,2
+DA:68,2
+DA:69,2
+DA:70,10
+BRDA:9,7,0,9
+BRDA:9,7,1,1
+BRDA:9,22,0,2
+BRDA:9,22,1,8
+BRDA:14,44,0,2
+BRDA:14,44,1,6
+BRDA:14,67,0,1
+BRDA:14,67,1,7
+BRDA:21,114,0,6
+BRDA:21,130,0,1
+BRDA:21,130,1,5
+BRDA:21,114,1,1
+BRDA:21,158,0,2
+BRDA:21,158,1,7
+BRDA:23,173,0,3
+BRDA:23,173,1,4
+BRDA:40,267,0,1
+BRDA:40,267,1,3
+BRDA:44,305,0,1
+BRDA:44,305,1,2
+BRDA:63,449,0,2
+BRDA:63,449,1,2
+BRDA:63,472,0,2
+BRDA:63,472,1,2
+LF:50
+LH:50
+BRF:24
+BRH:24
+FNF:1
+FNH:1
+end_of_record
