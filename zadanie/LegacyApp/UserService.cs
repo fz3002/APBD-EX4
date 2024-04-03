@@ -4,6 +4,27 @@ namespace LegacyApp
 {
     public class UserService
     {
+
+        private IClientRepository _clientRepository;
+
+        private IUserCreditService _userCreditService;
+
+        private IUserDataAccess _userDataAccess;
+
+        [Obsolete]
+        public UserService()
+        {
+            _clientRepository = new ClientRepository();
+            _userCreditService = new UserCreditService();
+            _userDataAccess = new AdapterUserDataAccess();
+        }
+
+        public UserService(IClientRepository clientRep, IUserCreditService userCreditService, IUserDataAccess userDataAccess)
+        {
+            _clientRepository = clientRep;   
+            _userCreditService = userCreditService;
+            _userDataAccess = userDataAccess;
+        }
         public bool AddUser(string firstName, string lastName, string email, DateTime dateOfBirth, int clientId)
         {
             if (string.IsNullOrEmpty(firstName) || string.IsNullOrEmpty(lastName))
@@ -18,15 +39,19 @@ namespace LegacyApp
 
             var now = DateTime.Now;
             var age = now.Year - dateOfBirth.Year;
-            if (now.Month < dateOfBirth.Month || (now.Month == dateOfBirth.Month && now.Day < dateOfBirth.Day)) age--;
+            
+            if (now.Month < dateOfBirth.Month || 
+                (now.Month == dateOfBirth.Month && now.Day < dateOfBirth.Day))
+            {
+                age--;
+            }
 
             if (age < 21)
             {
                 return false;
             }
 
-            var clientRepository = new ClientRepository();
-            var client = clientRepository.GetById(clientId);
+            var client = _clientRepository.GetById(clientId);
 
             var user = new User
             {
@@ -44,9 +69,9 @@ namespace LegacyApp
                     break;
                 case "ImportantClient":
                 {
-                    using var userCreditService = new UserCreditService();
-                    var creditLimit = userCreditService.GetCreditLimit(user.LastName, user.DateOfBirth);
-                    creditLimit = creditLimit * 2;
+    
+                    var creditLimit = _userCreditService.GetCreditLimit(user.LastName, user.DateOfBirth);
+                    creditLimit *= 2;
                     user.CreditLimit = creditLimit;
 
                     break;
@@ -54,8 +79,7 @@ namespace LegacyApp
                 default:
                 {
                     user.HasCreditLimit = true;
-                    using var userCreditService = new UserCreditService();
-                    var creditLimit = userCreditService.GetCreditLimit(user.LastName, user.DateOfBirth);
+                    var creditLimit = _userCreditService.GetCreditLimit(user.LastName, user.DateOfBirth);
                     user.CreditLimit = creditLimit;
 
                     break;
@@ -67,7 +91,7 @@ namespace LegacyApp
                 return false;
             }
 
-            UserDataAccess.AddUser(user);
+            _userDataAccess.AddUser(user);
             return true;
         }
     }
