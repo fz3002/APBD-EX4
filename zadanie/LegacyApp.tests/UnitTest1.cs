@@ -160,4 +160,46 @@ public class UnitTest1
         //Assert
         Assert.True(result);
     }
+
+    [Fact]
+    public void AddUser_WhenClientDoesntExist_ShouldThrowException()
+    {
+        try{
+        //Arrange
+        string name = "John";
+        string surname = "Smith";
+        string email = "smith@gmail.pl";
+        DateTime dateOfBirth = new DateTime(1974, 2,2);
+        int clientID = 123123;
+
+        //Act
+        bool result = us.AddUser(name, surname, email, dateOfBirth, clientID);
+
+        //Assert
+        Assert.Fail();
+        } catch(ArgumentException){
+
+        }
+    }
+
+    [Fact]
+    public void AddUser_WhenClientDoesntHaveCreditLimit_ShouldThrowException()
+    {
+        try{
+        //Arrange
+        string name = "John";
+        string surname = "Brzeczyszczykiewicz";
+        string email = "smith@gmail.pl";
+        DateTime dateOfBirth = new DateTime(1974, 2,2);
+        int clientID = 3;
+
+        //Act
+        bool result = us.AddUser(name, surname, email, dateOfBirth, clientID);
+
+        //Assert
+        Assert.Fail();
+        } catch(ArgumentException){
+
+        }
+    }
 }
