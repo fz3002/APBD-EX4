@@ -11,5 +11,22 @@ namespace LegacyApp
         public string LastName { get; internal set; }
         public bool HasCreditLimit { get; internal set; }
         public int CreditLimit { get; internal set; }
+
+        public bool Validate(){
+            
+            if (string.IsNullOrEmpty(FirstName) || string.IsNullOrEmpty(LastName))
+            {
+                return false;
+            }
+
+            if (!EmailAddress.Contains('@') && !EmailAddress.Contains('.'))
+            {
+                return false;
+            }
+
+
+            return true;
+        }
+
     }
 }

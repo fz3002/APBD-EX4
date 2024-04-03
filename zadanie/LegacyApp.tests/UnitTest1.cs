@@ -2,7 +2,7 @@ namespace LegacyApp.tests;
 
 public class UnitTest1
 {
-    UserService us = new UserService();
+    UserService us = new();
 
     [Fact]
     public void AddUser_WhenUserIsNormalClientAndCreditUnder500_ShouldNotAddUserAndReturnFalse()
@@ -59,7 +59,6 @@ public class UnitTest1
     public void AddUser_WhenNameNotGiven_ShouldReturnFalseAndNotAddUser()
     {
         //Arrange
-        string name = null;
         string surname = "Kowalski";
         string email = "kowalski@wp.pl";
         DateTime dateOfBirth = new DateTime(1980, 2,2);
@@ -77,7 +76,6 @@ public class UnitTest1
     {
         //Arrange
         string name = "Jan";
-        string surname = null;
         string email = "kowalski@wp.pl";
         DateTime dateOfBirth = new DateTime(1980, 2,2);
         int clientID = 1;

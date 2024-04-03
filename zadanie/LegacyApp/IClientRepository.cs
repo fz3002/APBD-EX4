@@ -1,6 +1,6 @@
 namespace LegacyApp{
     public interface IClientRepository
     {
-        Client GetById(int IdCleint);
+        Client GetById(int IdClient);
     }
 }

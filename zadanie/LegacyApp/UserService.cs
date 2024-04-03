@@ -26,17 +26,7 @@ namespace LegacyApp
             _userDataAccess = userDataAccess;
         }
         public bool AddUser(string firstName, string lastName, string email, DateTime dateOfBirth, int clientId)
-        {
-            if (string.IsNullOrEmpty(firstName) || string.IsNullOrEmpty(lastName))
-            {
-                return false;
-            }
-
-            if (!email.Contains('@') && !email.Contains('.'))
-            {
-                return false;
-            }
-
+        {            
             var now = DateTime.Now;
             var age = now.Year - dateOfBirth.Year;
             
@@ -61,6 +51,8 @@ namespace LegacyApp
                 FirstName = firstName,
                 LastName = lastName
             };
+
+            if(!user.Validate()) return false;
 
             switch (client.Type)
             {
