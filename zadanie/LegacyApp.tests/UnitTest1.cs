@@ -3,7 +3,13 @@ namespace LegacyApp.tests;
 public class UnitTest1
 {
     private UserService us = new UserService();
-    private UserService us2 = new(new FakeClientRepository(), new FakeUserCreditService(), new FakeUserDataAccess());
+    
+
+    [Fact]
+    public void UserServiceConstructor_WhenGivenProperDataBases_ShouldCreateUserService()
+    {
+        UserService us2 = new(new FakeClientRepository(), new FakeUserCreditService(), new FakeUserDataAccess());
+    }
 
     [Fact]
     public void AddUser_WhenUserIsNormalClientAndCreditUnder500_ShouldNotAddUserAndReturnFalse()
