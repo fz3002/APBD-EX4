@@ -2,7 +2,8 @@ namespace LegacyApp.tests;
 
 public class UnitTest1
 {
-    UserService us = new();
+    private UserService us = new UserService();
+    private UserService us2 = new(new FakeClientRepository(), new FakeUserCreditService(), new FakeUserDataAccess());
 
     [Fact]
     public void AddUser_WhenUserIsNormalClientAndCreditUnder500_ShouldNotAddUserAndReturnFalse()
@@ -105,12 +106,12 @@ public class UnitTest1
     }
 
     [Fact]
-    public void AddUser_WhenUserDidntHaveBirhtdayYet_ShouldDecreaseAgeByOneReturnFalseAndNotAddUser()
+    public void AddUser_WhenUserDidntHaveBirthdayYet_ShouldDecreaseAgeByOneReturnFalseAndNotAddUser()
     { //Arrange
         string name = "Jan";
         string surname = "Kowalski";
         string email = "kowalski@wp.pl";
-        DateTime dateOfBirth = new DateTime(2000, 3,30);
+        DateTime dateOfBirth = new DateTime(2000, 4,30);
         int clientID = 1;
 
         //Act
