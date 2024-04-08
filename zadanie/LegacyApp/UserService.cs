@@ -5,11 +5,11 @@ namespace LegacyApp
     public class UserService
     {
 
-        private IClientRepository _clientRepository;
+        private readonly IClientRepository _clientRepository;
 
-        private IUserCreditService _userCreditService;
+        private readonly IUserCreditService _userCreditService;
 
-        private IUserDataAccess _userDataAccess;
+        private readonly IUserDataAccess _userDataAccess;
 
         [Obsolete]
         public UserService()
